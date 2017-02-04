@@ -12,7 +12,7 @@ function getLoc() {
             /** Debug warn, to be repeated many times */
             console.warn('Coord:', loc);
             /** set api URL */
-            const apiURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + loc.lat + '&lon=' + loc.lon + '&APPID=d02ce233789788884574bba8d648b095';
+            const apiURL = 'http://api.openweathermap.org/data/2.5/weather?lat=' + loc.lat + '&lon=' + loc.lon + '&APPID=d02ce233789788884574bba8d648b095';
             console.warn('apiURL:', apiURL);
             /** ajax call */
             $.ajax({
@@ -28,7 +28,7 @@ function getLoc() {
                     $('#location').html(w.name + ', ' + w.sys.country);
                     console.warn(w.weather[0].icon);
                     /** sets weather icon */
-                    $('#icon').html('<img src="https://openweathermap.org/img/w/' + w.weather[0].icon + '.png">');
+                    $('#icon').html('<img src="http://openweathermap.org/img/w/' + w.weather[0].icon + '.png">');
                     /** get Kelvin temp and convert to C to 1 decimal */
                     const tempC = w.main.temp - 273.15;
                     const tempC2 = tempC.toFixed(1);
