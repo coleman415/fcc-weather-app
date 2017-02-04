@@ -12,7 +12,7 @@ function getLoc() {
             /** Debug warn, to be repeated many times */
             console.warn('Coord:', loc);
             /** set api URL */
-            const apiURL = 'http://api.openweathermap.org/data/2.5/weather?lat=' + loc.lat + '&lon=' + loc.lon + '&APPID=d02ce233789788884574bba8d648b095';
+            const apiURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + loc.lat + '&lon=' + loc.lon + '&APPID=d02ce233789788884574bba8d648b095';
             console.warn('apiURL:', apiURL);
             /** ajax call */
             $.ajax({
