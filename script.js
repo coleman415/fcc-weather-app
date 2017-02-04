@@ -12,7 +12,7 @@ function getLoc() {
             /** Debug warn, to be repeated many times */
             console.warn('Coord:', loc);
             /** set api URL */
-            const apiURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + loc.lat + '&lon=' + loc.lon + '&APPID=d02ce233789788884574bba8d648b095';
+            const apiURL = 'http://api.openweathermap.org/data/2.5/weather?lat=' + loc.lat + '&lon=' + loc.lon + '&APPID=d02ce233789788884574bba8d648b095';
             console.warn('apiURL:', apiURL);
             /** ajax call */
             $.ajax({
@@ -25,25 +25,31 @@ function getLoc() {
                     console.warn('API Success');
                     console.warn(w.name, w.sys.country);
                     /** sets location */
-                    $('#location').html(w.name + ', ' + w.sys.country);
+                    $('#location').hide().html(w.name + ', ' +
+                    w.sys.country).fadeIn(5000);
                     console.warn(w.weather[0].icon);
                     /** sets weather icon */
-                    $('#icon').html('<img src="https://openweathermap.org/img/w/' + w.weather[0].icon + '.png">');
+                    $('#icon').hide().html('<img src="http://openweathermap.org/img/w/' +
+                    w.weather[0].icon + '.png">').fadeIn(5000);
                     /** get Kelvin temp and convert to C to 1 decimal */
                     const tempC = w.main.temp - 273.15;
                     const tempC2 = tempC.toFixed(1);
                     console.warn(tempC2);
-                    $('#temperature').html(tempC2);
+                    $('#temperature').hide().html(tempC2).fadeIn(5000);
                     console.warn(w.main.humidity);
+                    /** hide and fade unit link */
+                    $('#unit').hide().fadeIn(5000);
                     /** set humidity */
-                    $('#humidity').html(w.main.humidity + '%');
+                    $('#humidity').hide().html(w.main.humidity +
+                    '%').fadeIn(5000);
                     console.warn(w.weather[0].description);
                     /** set weather description */
-                    $('#description').html(w.weather[0].description);
+                    $('#description').hide().html(w.weather[0].description)
+                    .fadeIn(5000);
                     /** calls convertTemp function after ajax data
                     is written to html so it can use it */
                     convertTemp();
-                    changeBackground();
+                    changeBackground(w.weather[0].icon);
                     $('#loading').hide();
                 },
             });
@@ -83,10 +89,23 @@ function convertTemp() {
 }
 /** Change background image depending on weather, can't use console to debug
 because it will use data from the ajax call */
-function changeBackground() {}
+function changeBackground() {
+    switch (icon) {
+        case '01d':
+            console.warn('changeBackground icon switch case 01d');
+            $('#background').hide().css('background-color', 'blue')
+            .fadeIn(5000);
+            break;
+        default:
+            console.warn('changeBackground icon switch case default');
+            $('#background').hide().css('background-color', 'red')
+            .fadeIn(5000);
+    }
+}
 
 /** Execute code on document ready */
 $(document).ready(() => {
+    $('#unit').hide();
     getLoc();
     convertTemp();
 });
