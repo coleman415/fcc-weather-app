@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Weather App</title>
-    <meta name="description" content="DESCRIPTION">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Weather</title>
+    <meta name="description" content="Too lazy to look outside?">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -18,14 +17,18 @@
 </head>
 
 <body>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="script.js"></script>
-    <div id="loading">Loading...</div>
-    <div id="location">Location</div>
-    <div id="icon">Icon</div>
-    <div><span id="temperature">Temperature</span>&nbsp;<a href="#"><span id="unit">C</span></a></div>
-    <div id="humidity">Humidity</div>
-    <div id="description">Description</div>
-
+    <div id="background">
+        <div id="wrapper">
+            <div id="loading">Loading...</div>
+            <div id="location">Location</div>
+            <div id="icon">Icon</div>
+            <div><span id="temperature">Temperature</span>&nbsp;<a href="#"><span id="unit">°C</span></a></div>
+            <div id="humidity">Humidity</div>
+            <div id="description">Description</div>
+        </div>
+    </div>
 
 </body>
 
