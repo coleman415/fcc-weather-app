@@ -25,6 +25,10 @@ a:hover, a:active {
   width: 100%;
   height: 100%;
   z-index: -1;
+
+  font-family: Helvetica;
+  font-weight: lighter;
+  letter-spacing: 1px;
 }
 
 #wrapper {
@@ -35,11 +39,17 @@ a:hover, a:active {
 
 #loading {
   color: black;
-  font-size: 5vw;
+  font-size: 8vw;
+  font-family: Helvetica;
+  font-weight: lighter;
+  letter-spacing: 1px;
 }
 
 #location {
-  font-size: 5vw;
+  font-size: 8vw;
+  font-family: Helvetica;
+  font-weight: lighter;
+  letter-spacing: 1px;
 }
 
 #icon {
@@ -47,17 +57,17 @@ a:hover, a:active {
 }
 
 #temperature {
-  font-size: 2vw;
+  font-size: 4vw;
 }
 
 #unit {
-  font-size: 2vw;
+  font-size: 4vw;
 }
 
 #humidity {
-  font-size: 2vw;
+  font-size: 4vw;
 }
 
 #description {
-  font-size: 2vw;
+  font-size: 4vw;
 }
